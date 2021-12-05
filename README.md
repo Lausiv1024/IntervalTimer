@@ -4,4 +4,4 @@
 あと処理だったり実装が汚いですがご了承ください
     
 ## 使用したライブラリ等  
-* [MetroRadiance.Fork](https://github.com/nishy2000/MetroRadiance.Fork)
+* [MetroRadiance.Fork](https://github.com/nishy2000/MetroRadiance.Fork) (ダークテーマ用)
