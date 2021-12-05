@@ -8,7 +8,7 @@ using System.Windows;
 using MetroRadiance.UI;
 
 
-namespace Time_Practice
+namespace IntervalTimer
 {
     /// <summary>
     /// App.xaml の相互作用ロジック

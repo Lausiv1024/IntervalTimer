@@ -4,11 +4,10 @@ using System.Windows;
 using System.Windows.Media;
 using MetroRadiance.UI;
 using System.Windows.Threading;
-using IntervalTimer;
 using System.IO;
 using System.IO.Ports;
 
-namespace Time_Practice
+namespace IntervalTimer
 {
     /// <summary>
     /// MainWindow.xaml の相互作用ロジック
