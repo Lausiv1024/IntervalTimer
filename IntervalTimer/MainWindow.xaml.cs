@@ -23,7 +23,7 @@ namespace IntervalTimer
         int curIndex = 0;
         bool completelyStopped = true;
         public static AlermSetting setting = new AlermSetting();
-        SerialPort serialPort;
+        //SerialPort serialPort;
 
         public MainWindow()
         {
@@ -34,16 +34,16 @@ namespace IntervalTimer
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += new EventHandler(update);
-            string[] ports = SerialPort.GetPortNames();
-            if (ports.Length > 0)
-            {
-                serialPort = new SerialPort();
-                serialPort.PortName = ports[0];
-                serialPort.BaudRate = 9600;
-                serialPort.Parity = Parity.None;
-                serialPort.DataBits = 8;
-                serialPort.StopBits = StopBits.One;
-            }
+            //string[] ports = SerialPort.GetPortNames();
+            //if (ports.Length > 0)
+            //{
+            //    serialPort = new SerialPort();
+            //    serialPort.PortName = ports[0];
+            //    serialPort.BaudRate = 9600;
+            //    serialPort.Parity = Parity.None;
+            //    serialPort.DataBits = 8;
+            //    serialPort.StopBits = StopBits.One;
+            //}
         }
 
         private void ChangeTheme()
@@ -185,16 +185,16 @@ namespace IntervalTimer
             {
                 curIndex++;
                 playSound();
-                if (serialPort != null)
-                {
-                    try
-                    {
-                        serialPort.Open();
-                        serialPort.Write("B");
-                        serialPort.Close();
-                    }
-                    catch { }
-                }
+                //if (serialPort != null)
+                //{
+                //    try
+                //    {
+                //        serialPort.Open();
+                //        serialPort.Write("B");
+                //        serialPort.Close();
+                //    }
+                //    catch { }
+                //}
 
                 if (indexCount == curIndex)
                 {
