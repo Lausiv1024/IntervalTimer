@@ -5,7 +5,6 @@ using System.Windows.Media;
 using MetroRadiance.UI;
 using System.Windows.Threading;
 using System.IO;
-using System.IO.Ports;
 
 namespace IntervalTimer
 {
@@ -200,11 +199,11 @@ namespace IntervalTimer
 
         private void playSound()
         {
-            if (IntervalTimer.Properties.Settings.Default.IsFile
-                && File.Exists(IntervalTimer.Properties.Settings.Default.SoundPath))
+            if (Properties.Settings.Default.IsFile
+                && File.Exists(Properties.Settings.Default.SoundPath))
             {
                 var sPlayer = new System.Media.SoundPlayer(
-                    IntervalTimer.Properties.Settings.Default.SoundPath);
+                    Properties.Settings.Default.SoundPath);
                 sPlayer.Play();
             }
             else
