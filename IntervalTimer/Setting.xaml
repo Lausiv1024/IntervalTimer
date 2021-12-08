@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:IntervalTimer"
         mc:Ignorable="d"
         Title="設定" Height="300" Width="500" ShowInTaskbar="False" ResizeMode="NoResize" KeyDown="Window_KeyDown"
-        Background="{DynamicResource ThemeBrushKey}">
+        Background="{DynamicResource ThemeBrushKey}" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

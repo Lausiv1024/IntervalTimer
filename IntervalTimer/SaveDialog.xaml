@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IntervalTimer"
         mc:Ignorable="d" Background="{DynamicResource ThemeBrushKey}"
-        Title="インターバルを保存" Height="100" Width="300" ResizeMode="NoResize" ShowInTaskbar="False" KeyDown="Window_KeyDown">
+        Title="インターバルを保存" Height="100" Width="300" ResizeMode="NoResize" ShowInTaskbar="False" KeyDown="Window_KeyDown" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

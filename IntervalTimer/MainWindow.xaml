@@ -35,8 +35,8 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="StartStop" Content="スタート" Margin="8" Click="StartStop_Click"/>
-                <Button x:Name="ResetButton" Grid.Column="1" Content="リセット" Margin="8" Click="ResetButton_Click"/>
+                <Button x:Name="StartStop" Content="▷" Margin="8" Click="StartStop_Click" FontSize="24"/>
+                <Button x:Name="ResetButton" Grid.Column="1" Content="リセット" Margin="8" Click="ResetButton_Click" FontSize="24"/>
             </Grid>
 
         </Grid>

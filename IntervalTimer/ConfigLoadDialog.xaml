@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IntervalTimer"
         mc:Ignorable="d"
-        Title="インターバル設定を読み込み" Height="450" Width="400" ShowInTaskbar="False" ResizeMode="NoResize" Background="{DynamicResource ThemeBrushKey}" KeyDown="Window_KeyDown">
+        Title="インターバル設定を読み込み" Height="450" Width="400" ShowInTaskbar="False" ResizeMode="NoResize" Background="{DynamicResource ThemeBrushKey}" KeyDown="Window_KeyDown" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

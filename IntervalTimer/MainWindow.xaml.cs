@@ -151,14 +151,8 @@ namespace IntervalTimer
         private void startOrStop(bool mode)
         {
             isStarting = mode;
-            if (mode)
-            {
-                StartStop.Content = "ストップ";
-                timer.Start();
-                return;
-            }
-            StartStop.Content = "スタート";
-            timer.Stop();
+            StartStop.Content = mode ? "ⅼⅼ" : "▷";
+            timer.IsEnabled = mode;
         }
 
         private void subtractAndUpdate()
@@ -238,6 +232,7 @@ namespace IntervalTimer
         private void Setting_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new Setting();
+            dialog.Owner = GetWindow(this);
             dialog.ShowDialog();
         }
 
