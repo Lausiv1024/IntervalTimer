@@ -64,6 +64,7 @@ namespace IntervalTimer
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new AddTimer();
+            dialog.Owner = GetWindow(this);
             if (dialog.ShowDialog() == true)
             {   
                 var a = dialog.timerData;
@@ -95,6 +96,7 @@ namespace IntervalTimer
                     "なにか設定しろ", MessageBoxButton.OK, MessageBoxImage.Warning);return;
             }
             var dialog = new SaveDialog();
+            dialog.Owner = GetWindow(this);
             if (dialog.ShowDialog() == true)
             {
                 string name = dialog.namee.Text;
@@ -215,6 +217,7 @@ namespace IntervalTimer
         private void LoadButton_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new ConfigLoadDialog();
+            dialog.Owner = GetWindow(this);
             if (dialog.ShowDialog() == true)
             {
                 ConfigManager a = new ConfigManager(dialog.getConfigNameList()[dialog.ConfigList.SelectedIndex]);
