@@ -13,7 +13,7 @@ namespace IntervalTimer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string winTitleDefault = "インターバルタイマー";
+        private readonly string winTitleDefault = "インターバルタイマー";
 
         DispatcherTimer timer = new DispatcherTimer();
         List<TimerData> timerDatas;
@@ -166,7 +166,7 @@ namespace IntervalTimer
         {
             var c = timerDatas[index];
             curTime = c.timerLength;
-            Title = winTitleDefault + " - " + c.name;
+            Title = $"{winTitleDefault} - {c.name}";
             intervalName.Text = c.name;
             TimerCounter.Text = curTime.ToString("h\\:m\\:ss");
             IntervalList.SelectedIndex = index;
@@ -233,9 +233,7 @@ namespace IntervalTimer
 
         private void Setting_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new Setting();
-            dialog.Owner = GetWindow(this);
-            dialog.ShowDialog();
+            openDialog(new Setting());
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -248,6 +246,11 @@ namespace IntervalTimer
                     e.Cancel = true;
                 }
             }
+        }
+        private void openDialog(Window dialog)
+        {
+            dialog.Owner = GetWindow(this);
+            dialog.ShowDialog();
         }
     }
 }

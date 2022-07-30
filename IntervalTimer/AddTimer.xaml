@@ -37,11 +37,11 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="タイマー：" VerticalAlignment="Center" Foreground="{DynamicResource ActiveForegroundBrushKey}"/>
-            <metro:PromptTextBox x:Name="Hour" Grid.Column="1" Margin="5" Prompt="時" Text="0" GotFocus="onTextBoxGetFocus">
+            <metro:PromptTextBox x:Name="Hour" Grid.Column="1" Margin="5" Prompt="時" Text="0" GotFocus="onTextBoxGetFocus" MouseUp="onTextBoxGetFocus">
             </metro:PromptTextBox>
-            <metro:PromptTextBox Name="Minutes" Grid.Column="2" Margin="5" Prompt="分" Text="0" GotFocus="onTextBoxGetFocus">
+            <metro:PromptTextBox Name="Minutes" Grid.Column="2" Margin="5" Prompt="分" Text="0" GotFocus="onTextBoxGetFocus" MouseUp="onTextBoxGetFocus">
             </metro:PromptTextBox>
-            <metro:PromptTextBox Name="Seconds" Grid.Column="3" Margin="5" Prompt="秒" Text="0" GotFocus="onTextBoxGetFocus"/>
+            <metro:PromptTextBox Name="Seconds" Grid.Column="3" Margin="5" Prompt="秒" Text="0" GotFocus="onTextBoxGetFocus" MouseUp="onTextBoxGetFocus"/>
         </Grid>
 
         <Grid Grid.Row="4">

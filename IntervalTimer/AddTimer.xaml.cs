@@ -64,9 +64,9 @@ namespace IntervalTimer
 
         private void confirm()
         {
-            int second = 0;
-            int minutes = 0;
-            int hours = 0;
+            int second;
+            int minutes;
+            int hours;
             if (timerName.Text == string.Empty && Seconds.Text == string.Empty)
             {
                 showWarning(NoNameAndTime);
@@ -145,11 +145,26 @@ namespace IntervalTimer
             {
                 TextBox textBox = sender as TextBox;
                 textBox.SelectAll();
+                e.Handled = true;
             }
             else
             {
                 throw new ArgumentException("senderがTextBoxじゃないです");
             }
+        }
+
+        private void onTextBoxGetFocus(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is TextBox)
+            {
+                TextBox textBox = sender as TextBox;
+                textBox.SelectAll();
+                e.Handled = true;
+            } else
+            {
+                throw new ArgumentException("senderがTextBoxじゃないです");
+            }
+            
         }
     }
 }
