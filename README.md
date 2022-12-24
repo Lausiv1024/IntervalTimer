@@ -1,5 +1,6 @@
 # IntervalTimer  
 ![IntervalTimerApp](https://github.com/Lausiv1024/IntervalTimer/blob/master/doc/img/app.png)
+<br>
 複数個のタイマーを順番に動かすことができます<br>
 
 ## ダウンロード方法
