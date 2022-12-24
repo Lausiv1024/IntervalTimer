@@ -47,7 +47,8 @@ namespace IntervalTimer
 
         private void ChangeTheme()
         {
-            ThemeService.Current.ChangeTheme(Theme.Dark);
+            if (Properties.Settings.Default.Theme == 1)
+                ThemeService.Current.ChangeTheme(Theme.Dark);
         }
 
         private void changeColor()

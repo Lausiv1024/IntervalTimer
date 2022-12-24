@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace IntervalTimer
 {
@@ -19,7 +20,7 @@ namespace IntervalTimer
         {
             
             TimerDatas = new List<TimerData>();
-            worlkngDir = Environment.CurrentDirectory;
+            worlkngDir = Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName;
             ConfName = conf;
         }
 
@@ -28,7 +29,7 @@ namespace IntervalTimer
             TimerDatas = a;
             ConfName = conf;
             worlkngDir = Environment.CurrentDirectory;
-            var filePath = worlkngDir + "\\Intervals\\" + ConfName + ".ini";
+            var filePath = Path.Combine(worlkngDir, "Intervals", $"{conf}.ini");
             //やっばファイル存在チェックしないと
             AlreadyExists = File.Exists(filePath);
         }
@@ -38,7 +39,7 @@ namespace IntervalTimer
         /// </summary>
         public void Load()
         {
-            var filePath = worlkngDir + "\\Intervals\\" + ConfName + ".ini";
+            var filePath = Path.Combine(worlkngDir, "Intervals", $"{ConfName}.ini");
             string data;
             if (File.Exists(filePath))
             {
@@ -88,7 +89,7 @@ namespace IntervalTimer
         /// </summary>
         public bool Save()
         {
-            var filePath = worlkngDir + "\\Intervals\\" + ConfName + ".ini";
+            var filePath = Path.Combine(worlkngDir, "Intervals", $"{ConfName}.ini");
             try
             {
                 using(var writer = new StreamWriter(filePath, false, Encoding.UTF8))

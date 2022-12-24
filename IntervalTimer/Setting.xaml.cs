@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.IO;
+using MetroRadiance.UI;
 
 namespace IntervalTimer
 {
@@ -33,6 +34,7 @@ namespace IntervalTimer
             {
                 Defo.IsChecked = true;
             }
+            ThemeSetting.SelectedIndex = Properties.Settings.Default.Theme;
         }
 
         private void SelectFile_Click(object sender, RoutedEventArgs e)
@@ -46,7 +48,7 @@ namespace IntervalTimer
             }
         }
 
-        private void asd(object sender, RoutedEventArgs e)
+        private void CheckAndApplySetting(object sender, RoutedEventArgs e)
         {
             if (!(sender is Button)) return;
             Button button = (Button)sender;
@@ -69,7 +71,9 @@ namespace IntervalTimer
             }
             Properties.Settings.Default.SoundPath = SoundPath.Text;
             Properties.Settings.Default.IsFile = (bool)FileSelection.IsChecked;
+            Properties.Settings.Default.Theme = ThemeSetting.SelectedIndex;
             Properties.Settings.Default.Save();
+            ThemeService.Current.ChangeTheme(Properties.Settings.Default.Theme == 0 ? Theme.Light : Theme.Dark);
             this.Close();
         }
 
